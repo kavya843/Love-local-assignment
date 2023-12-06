@@ -18,3 +18,14 @@ result = sol.triangle(numRows)
 print(result)
 
 
+Algorithm:
+If the row number is 0, return a list with a single element [1], as the first row of Pascal's Triangle is always [1].
+Define a recursive function generate_row(row_num, memo) that takes the current row number and a memoization dictionary as parameters.
+Check if the current row number is already in the memo dictionary. If yes, return the memoized result.
+If not, recursively call generate_row for the previous row, obtaining the prev_row list.
+Create a new row by combining [1] with the sum of consecutive pairs of elements from the prev_row.
+Append [1] at the end of the new row.
+Store the newly generated row in the memo dictionary for the current row number.
+Iterate through the row numbers from 0 to numRows - 1.
+For each row number, call the generate_row function to obtain the corresponding row.
+Return the list of generated rows, forming Pascal's Triangle.
