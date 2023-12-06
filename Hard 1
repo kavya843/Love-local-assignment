@@ -1,0 +1,21 @@
+def Max(arr, N, K):
+    for i in range(N - K + 1):
+        current_max = max(arr[i:i + K])
+        print(str(current_max) + " ", end="")
+
+if __name__ == "__main__":
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    N = len(arr)
+    K = 3
+     
+    Max(arr, N, K)
+
+
+Algorithm : 
+Imagine an array representing multiple local neighborhoods, each containing individuals with different rankings.
+Traverse through each neighborhood, considering a specified range (K) at a time.
+Within each range, find  the individual with the highest ranking.
+Print the ranking.
+Move to the next neighborhood, overlapping with the previous one.
+Repeat the process until you have covered all neighborhoods.
+The printed rankings represent the local champions within each specified range in the neighborhoods.
